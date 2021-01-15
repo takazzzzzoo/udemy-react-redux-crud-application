@@ -1,22 +1,28 @@
 import React, { Component } from 'react';
 
-// function App() {
-//   return <div>Hello, world!</div>;
-// }
+const App = () => (<Counter></Counter>)
 
-class App extends Component{
+class Counter extends Component{
+  constructor(props) {
+    super(props)
+    this.state = { count:0 }
+  }
+
+  hundlePlusButton = () => {
+    this.setState({count: this.state.count + 1})
+  }
+  hundleMinusButton = () => {
+    this.setState({count: this.state.count - 1})
+  }
+
   render(){
-	return (
-	  <React.Fragment>
-            <label htmlFor="bar">bar</label>
-            <input type="text" onChange={() => {console.log("I am clicked")}} />
-          </React.Fragment>
-	)
-
-//    const greeting = "Hi,Tom!!";
-//    const dom = <h1 className="foo">{greeting}</h1>;
-//    return dom;
-
+    return (
+      <React.Fragment>
+        <div>count: { this.state.count }</div>
+        <button onClick={this.hundlePlusButton}>+1</button>
+        <button onClick={this.hundleMinusButton}>-1</button>
+      </React.Fragment>
+    )
   }
 }
 
