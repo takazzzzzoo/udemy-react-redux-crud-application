@@ -1,6 +1,4 @@
-import { combineReducers } from 'redux'
-import count from './count'
+import { combineReducers } from 'redux';
+import count from './count';
 
-export default combineReducers({ count })
-// export default combineReducers({ hoge1, hoge2, hoge3 })
-
+export default combineReducers({ count });
